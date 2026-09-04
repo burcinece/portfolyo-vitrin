@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FaReact, FaNodeJs, FaPython, FaDatabase } from 'react-icons/fa6'
+import BackgroundGlow from './BackgroundGlow'
 
 const techStack = [
   { name: 'React', icon: FaReact },
@@ -11,9 +12,8 @@ const techStack = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden px-6 pb-16 pt-28 text-center sm:pt-32">
-      <div className="pointer-events-none absolute -top-32 left-1/2 h-[560px] w-[560px] -translate-x-[58%] rounded-full bg-rose-400/20 blur-[140px]" />
-      <div className="pointer-events-none absolute -top-16 left-1/2 h-[500px] w-[500px] -translate-x-[42%] rounded-full bg-zinc-500/15 blur-[150px]" />
+    <section className="relative overflow-hidden bg-zinc-950 px-6 pb-16 pt-28 text-center sm:pt-32">
+      <BackgroundGlow />
 
       <motion.div
         initial={{ opacity: 0, y: 16 }}
@@ -21,7 +21,7 @@ function HeroSection() {
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className="relative mx-auto flex max-w-xl flex-col items-center"
       >
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-100 md:text-6xl">
+        <h1 className="text-4xl font-bold tracking-tight text-zinc-200 md:text-6xl">
           Full-Stack Geliştirici
         </h1>
 
@@ -49,7 +49,7 @@ function HeroSection() {
           </Link>
         </div>
 
-        <ul className="mt-10 flex items-center justify-center gap-5 border-t border-zinc-900 pt-6">
+        <ul className="mt-10 flex items-center justify-center gap-5 border-t border-zinc-800 pt-6">
           {techStack.map(({ name, icon: Icon }) => (
             <li key={name} title={name} aria-label={name}>
               <Icon className="h-5 w-5 text-zinc-600 transition-colors duration-200 hover:text-zinc-300" />

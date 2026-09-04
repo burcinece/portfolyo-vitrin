@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form'
 import { socialLinks } from '../data/socialLinks'
+import BackgroundGlow from '../components/BackgroundGlow'
 
 function Contact() {
   const {
@@ -15,13 +16,15 @@ function Contact() {
   }
 
   return (
-    <section className="mx-auto max-w-5xl px-6 py-24">
-      <div className="grid gap-16 md:grid-cols-2">
+    <section className="relative overflow-hidden bg-zinc-950 px-6 py-24">
+      <BackgroundGlow />
+
+      <div className="relative mx-auto grid max-w-5xl gap-16 md:grid-cols-2">
         <div>
           <p className="mb-4 text-sm font-medium uppercase tracking-widest text-zinc-500">
             İletişim
           </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-zinc-100">
+          <h1 className="text-4xl font-semibold tracking-tight text-zinc-200">
             Birlikte çalışalım
           </h1>
           <p className="mt-4 max-w-sm text-zinc-400">
@@ -37,7 +40,7 @@ function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={name}
-                className="flex h-10 w-10 items-center justify-center rounded-md border border-zinc-800 text-zinc-400 transition-colors duration-200 hover:border-zinc-700 hover:text-zinc-100"
+                className="flex h-10 w-10 items-center justify-center rounded-md border border-zinc-800 text-zinc-400 transition-colors duration-200 hover:border-zinc-700 hover:text-zinc-200"
               >
                 <Icon className="h-4 w-4" />
               </a>
@@ -47,7 +50,7 @@ function Contact() {
 
         <div className="rounded-lg border border-zinc-800 p-8">
           {isSubmitSuccessful ? (
-            <p className="text-sm text-zinc-300">
+            <p className="text-sm text-zinc-400">
               Mesajın için teşekkürler, en kısa sürede dönüş yapacağım.
             </p>
           ) : (

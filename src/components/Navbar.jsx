@@ -11,7 +11,7 @@ const links = [
 
 const linkClass = ({ isActive }) =>
   `text-sm transition-colors duration-200 ${
-    isActive ? 'text-zinc-100' : 'text-zinc-500 hover:text-zinc-300'
+    isActive ? 'text-zinc-200' : 'text-zinc-500 hover:text-zinc-300'
   }`
 
 function Navbar() {
@@ -22,7 +22,7 @@ function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <NavLink
           to="/"
-          className="text-sm font-medium text-zinc-100 transition-colors duration-200 hover:text-white"
+          className="text-sm font-medium text-zinc-200 transition-colors duration-200 hover:text-zinc-100"
         >
           Burçin Ece Şahin
         </NavLink>
