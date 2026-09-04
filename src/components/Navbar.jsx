@@ -10,19 +10,19 @@ const links = [
 ]
 
 const linkClass = ({ isActive }) =>
-  `transition-colors duration-200 hover:text-brand-accent ${
-    isActive ? 'text-brand-accent' : 'text-slate-300'
+  `text-sm transition-colors duration-200 ${
+    isActive ? 'text-zinc-100' : 'text-zinc-500 hover:text-zinc-300'
   }`
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-800 bg-brand-dark/80 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <NavLink
           to="/"
-          className="text-lg font-semibold tracking-wide text-white transition-colors duration-200 hover:text-brand-accent"
+          className="text-sm font-medium text-zinc-100 transition-colors duration-200 hover:text-white"
         >
           Burçin Ece Şahin
         </NavLink>
@@ -40,7 +40,7 @@ function Navbar() {
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
-          className="text-2xl text-slate-200 transition-colors duration-200 hover:text-brand-accent md:hidden"
+          className="text-xl text-zinc-400 transition-colors duration-200 hover:text-zinc-100 md:hidden"
           aria-label="Menüyü aç/kapat"
         >
           {isOpen ? <HiX /> : <HiMenu />}
@@ -48,7 +48,7 @@ function Navbar() {
       </nav>
 
       {isOpen && (
-        <ul className="flex flex-col gap-4 border-t border-slate-800 px-6 py-4 md:hidden">
+        <ul className="flex flex-col gap-4 border-t border-zinc-800 px-6 py-4 md:hidden">
           {links.map((link) => (
             <li key={link.to}>
               <NavLink
