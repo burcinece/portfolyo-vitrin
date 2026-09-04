@@ -1,8 +1,14 @@
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { HiCheck, HiOutlineClipboard } from 'react-icons/hi'
 import { socialLinks } from '../data/socialLinks'
 import BackgroundGlow from '../components/BackgroundGlow'
 
+const email = 'burcinecesahin@gmail.com'
+
 function Contact() {
+  const [copied, setCopied] = useState(false)
+
   const {
     register,
     handleSubmit,
@@ -13,6 +19,16 @@ function Contact() {
   const onSubmit = async () => {
     await new Promise((resolve) => setTimeout(resolve, 600))
     reset()
+  }
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      // Pano erişimi engellenmişse sessizce yok say, mailto linki hâlâ çalışır.
+    }
   }
 
   return (
@@ -32,7 +48,28 @@ function Contact() {
             Formu doldur, en kısa sürede dönüş yapayım.
           </p>
 
-          <div className="mt-8 flex gap-3">
+          <div className="mt-8 flex items-center gap-2 rounded-md border border-zinc-800 py-2.5 pl-4 pr-2.5">
+            <a
+              href={`mailto:${email}`}
+              className="flex-1 truncate text-sm text-zinc-300 transition-colors duration-200 hover:text-zinc-200"
+            >
+              {email}
+            </a>
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              aria-label="E-posta adresini kopyala"
+              className="flex h-7 w-7 shrink-0 items-center justify-center rounded text-zinc-500 transition-colors duration-200 hover:text-zinc-200"
+            >
+              {copied ? (
+                <HiCheck className="h-4 w-4" />
+              ) : (
+                <HiOutlineClipboard className="h-4 w-4" />
+              )}
+            </button>
+          </div>
+
+          <div className="mt-4 flex gap-3">
             {socialLinks.map(({ name, href, icon: Icon }) => (
               <a
                 key={name}

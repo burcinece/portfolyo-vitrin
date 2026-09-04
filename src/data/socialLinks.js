@@ -1,7 +1,10 @@
-import { FaGithub, FaLinkedin, FaUpwork } from 'react-icons/fa6'
+import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 
 export const socialLinks = [
-  { name: 'GitHub', href: '#', icon: FaGithub },
-  { name: 'LinkedIn', href: '#', icon: FaLinkedin },
-  { name: 'Upwork', href: '#', icon: FaUpwork },
+  { name: 'GitHub', href: 'https://github.com/burcinece', icon: FaGithub },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/burcinecesahin',
+    icon: FaLinkedin,
+  },
 ]
