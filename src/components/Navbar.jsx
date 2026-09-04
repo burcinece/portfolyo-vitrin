@@ -5,7 +5,6 @@ import { HiMenu, HiX } from 'react-icons/hi'
 const links = [
   { to: '/', label: 'Ana Sayfa' },
   { to: '/projeler', label: 'Projeler' },
-  { to: '/ozgecmis', label: 'Özgeçmiş' },
   { to: '/iletisim', label: 'İletişim' },
 ]
 
